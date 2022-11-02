@@ -1,0 +1,106 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Description": "APINestedStack nested stack",
+  "Parameters": {
+    "ApiGatewayRestApiParameter": {
+      "Type": "String"
+    },
+    "ApiGatewayRestApiRootResourceIdParameter": {
+      "Type": "String"
+    }
+  },
+  "Resources": {
+    "ApiGatewayResourceMessagedelete": {
+      "Type": "AWS::ApiGateway::Resource",
+      "Properties": {
+        "ParentId": {
+          "Ref": "ApiGatewayRestApiRootResourceIdParameter"
+        },
+        "PathPart": "messageDelete",
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApiParameter"
+        }
+      },
+      "DependsOn": []
+    },
+    "ApiGatewayResourceMessageinsert": {
+      "Type": "AWS::ApiGateway::Resource",
+      "Properties": {
+        "ParentId": {
+          "Ref": "ApiGatewayRestApiRootResourceIdParameter"
+        },
+        "PathPart": "messageInsert",
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApiParameter"
+        }
+      },
+      "DependsOn": []
+    },
+    "ApiGatewayResourceMessagesgetbypage": {
+      "Type": "AWS::ApiGateway::Resource",
+      "Properties": {
+        "ParentId": {
+          "Ref": "ApiGatewayRestApiRootResourceIdParameter"
+        },
+        "PathPart": "messagesGetByPage",
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApiParameter"
+        }
+      },
+      "DependsOn": []
+    },
+    "ApiGatewayResourceMessagesgetbysearch": {
+      "Type": "AWS::ApiGateway::Resource",
+      "Properties": {
+        "ParentId": {
+          "Ref": "ApiGatewayRestApiRootResourceIdParameter"
+        },
+        "PathPart": "messagesGetBySearch",
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApiParameter"
+        }
+      },
+      "DependsOn": []
+    },
+    "ApiGatewayResourceMessageupdate": {
+      "Type": "AWS::ApiGateway::Resource",
+      "Properties": {
+        "ParentId": {
+          "Ref": "ApiGatewayRestApiRootResourceIdParameter"
+        },
+        "PathPart": "messageUpdate",
+        "RestApiId": {
+          "Ref": "ApiGatewayRestApiParameter"
+        }
+      },
+      "DependsOn": []
+    }
+  },
+  "Outputs": {
+    "ApiGatewayResourceMessageinsert": {
+      "Value": {
+        "Ref": "ApiGatewayResourceMessageinsert"
+      }
+    },
+    "ApiGatewayResourceMessagesgetbypage": {
+      "Value": {
+        "Ref": "ApiGatewayResourceMessagesgetbypage"
+      }
+    },
+    "ApiGatewayResourceMessagesgetbysearch": {
+      "Value": {
+        "Ref": "ApiGatewayResourceMessagesgetbysearch"
+      }
+    },
+    "ApiGatewayResourceMessageupdate": {
+      "Value": {
+        "Ref": "ApiGatewayResourceMessageupdate"
+      }
+    },
+    "ApiGatewayResourceMessagedelete": {
+      "Value": {
+        "Ref": "ApiGatewayResourceMessagedelete"
+      }
+    }
+  }
+}

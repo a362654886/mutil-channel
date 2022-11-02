@@ -1,0 +1,91 @@
+service: serverless-code
+
+frameworkVersion: "2"
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  apiGateway:
+    shouldStartNameWithService: true
+
+functions:
+  channelInsert:
+    handler: dist/src/handler/channelHandler.channelInsert
+    events:
+      - http:
+          path: channelInsert
+          method: post
+          cors: true
+  channelsGetByPage:
+    handler: dist/src/handler/channelHandler.channelsGetByPage
+    events:
+      - http:
+          path: channelsGetByPage
+          method: get
+          cors: true
+  channelsGetBySearch:
+    handler: dist/src/handler/channelHandler.channelsGetBySearch
+    events:
+      - http:
+          path: channelsGetBySearch
+          method: get
+          cors: true
+  channelUpdate:
+    handler: dist/src/handler/channelHandler.channelUpdate
+    events:
+      - http:
+          path: channelUpdate
+          method: put
+          cors: true
+  channelDelete:
+    handler: dist/src/handler/channelHandler.channelDelete
+    events:
+      - http:
+          path: channelDelete
+          method: delete
+          cors: true
+  messageInsert:
+    handler: dist/src/handler/messageHandler.messageInsert
+    events:
+      - http:
+          path: messageInsert
+          method: post
+          cors: true
+  messagesGetByPage:
+    handler: dist/src/handler/messageHandler.messagesGetByPage
+    events:
+      - http:
+          path: messagesGetByPage
+          method: get
+          cors: true
+  messagesGetBySearch:
+    handler: dist/src/handler/messageHandler.messagesGetBySearch
+    events:
+      - http:
+          path: messagesGetBySearch
+          method: get
+          cors: true
+  messageUpdate:
+    handler: dist/src/handler/messageHandler.messageUpdate
+    events:
+      - http:
+          path: messageUpdate
+          method: put
+          cors: true
+  messageDelete:
+    handler: dist/src/handler/messageHandler.messageDelete
+    events:
+      - http:
+          path: messageDelete
+          method: delete
+          cors: true
+
+custom:
+  splitStacks:
+    perFunction: false
+    perType: true
+    perGroupFunction: false
+
+plugins:
+  - serverless-offline
+  - serverless-plugin-split-stacks
