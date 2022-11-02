@@ -4,11 +4,13 @@
   "description": "",
   "main": "handler.js",
   "scripts": {
-    "test": "jest"
+    "testJest": "jest ./test/jestTest",
+    "testPlayRight": "npx playwright test"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@playwright/test": "^1.27.1",
     "@shelf/jest-mongodb": "^4.1.3",
     "@types/aws-lambda": "^8.10.76",
     "@types/jest": "^29.2.1",
