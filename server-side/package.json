@@ -5,7 +5,7 @@
   "main": "handler.js",
   "scripts": {
     "testJest": "jest ./test/jestTest",
-    "testPlayRight": "npx playwright test"
+    "testPlayRight": "env-cmd -f .env.prod npx playwright test"
   },
   "author": "",
   "license": "ISC",
@@ -30,9 +30,11 @@
     "aws-multipart-parser": "^0.2.1",
     "aws-sdk": "^2.934.0",
     "babel-jest": "^29.2.2",
+    "env-cmd": "^10.1.0",
     "jsonwebtoken": "^8.5.1",
     "mongodb": "^3.6.6",
     "multiparty": "^4.2.2",
+    "readable-stream": "^2.3.7",
     "ts-jest": "^29.0.3",
     "tslib": "^2.2.0"
   }

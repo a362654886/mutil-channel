@@ -45,6 +45,7 @@ const channelsGetByPage: Handler = async (event, context) => {
 
 const channelsGetBySearch: Handler = async (event, context) => {
   const { name, sortType, sortAscend } = event.queryStringParameters;
+  console.log(name);
   return getResult<ChannelGetBySearchPara, Channel[] | null>(
     { name, sortType, sortAscend },
     getChanelBySearch
@@ -57,9 +58,9 @@ const channelUpdate: Handler = async (event, context) => {
 };
 
 const channelDelete: Handler = async (event, context) => {
-  const { animeId } = event.queryStringParameters;
+  const { channelId } = event.queryStringParameters;
   return getResult<string, DeleteWriteOpResultObject | null>(
-    animeId,
+    channelId,
     deleteChannel
   );
 };

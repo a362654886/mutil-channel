@@ -60,7 +60,7 @@ export const getChanelBySearch = async (
     const sortBody = getChannelSortType(para.sortType, para.sortAscend);
     const channels = await dbServiceGetWithoutPage<Channel>(
       DBTableName.CHANNEL,
-      { name: name },
+      { name: para.name },
       sortBody
     );
     return channels;

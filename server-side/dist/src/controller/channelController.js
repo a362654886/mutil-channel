@@ -26,7 +26,7 @@ exports.getChanelByPage = getChanelByPage;
 const getChanelBySearch = async (para) => {
     try {
         const sortBody = (0, sortFn_1.getChannelSortType)(para.sortType, para.sortAscend);
-        const channels = await (0, MongoDBService_1.dbServiceGetWithoutPage)(tableName_1.DBTableName.CHANNEL, { name: name }, sortBody);
+        const channels = await (0, MongoDBService_1.dbServiceGetWithoutPage)(tableName_1.DBTableName.CHANNEL, { name: para.name }, sortBody);
         return channels;
     }
     catch (error) {

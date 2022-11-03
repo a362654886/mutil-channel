@@ -13,7 +13,7 @@
     "sourceMap": false,
     "noUnusedLocals": false,
     "baseUrl": ".",
-    "outDir": "./dist/src"
+    "outDir": "./dist"
   },
   "type": "module",
   "include": ["*/**/*.ts", "src/test/jestTest/testChannel.test.tsx"],

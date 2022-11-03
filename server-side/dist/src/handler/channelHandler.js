@@ -20,6 +20,7 @@ const channelsGetByPage = async (event, context) => {
 exports.channelsGetByPage = channelsGetByPage;
 const channelsGetBySearch = async (event, context) => {
     const { name, sortType, sortAscend } = event.queryStringParameters;
+    console.log(name);
     return (0, generateReturnBody_1.getResult)({ name, sortType, sortAscend }, channelController_1.getChanelBySearch);
 };
 exports.channelsGetBySearch = channelsGetBySearch;

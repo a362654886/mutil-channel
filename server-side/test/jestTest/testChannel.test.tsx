@@ -1,7 +1,7 @@
 import { dbObject } from "../../src/service/MongoDBService";
 
-describe("insert", () => {
-  it("should insert a doc into collection", async () => {
+describe("test mongoDb connection", () => {
+  it("test mongoDb connection", async () => {
     const users = await dbObject("users");
 
     const mockUser = { _id: "some-user-id", name: "John" };

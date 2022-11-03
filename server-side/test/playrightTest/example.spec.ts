@@ -1,20 +1,24 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from "@playwright/test";
+import {
+  createChannel,
+  deleteChannel,
+  filterChannel,
+} from "./playwrightHelper/channelTestFunctions";
 
-test('homepage has Playwright in title and get started link linking to the intro page', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
+test("test channel functions", async ({ request }) => {
+  const testChannel = {
+    _id: `testChannel`,
+    name: "testChannel",
+  };
 
-  // Expect a title "to contain" a substring.
-  await expect(page).toHaveTitle(/Playwright/);
-
-  // create a locator
-  const getStarted = page.getByText('Get Started');
-
-  // Expect an attribute "to be strictly equal" to the value.
-  await expect(getStarted).toHaveAttribute('href', '/docs/intro');
-
-  // Click the get started link.
-  await getStarted.click();
-
-  // Expects the URL to contain intro.
-  await expect(page).toHaveURL(/.*intro/);
+  // test add function
+  await createChannel(request, testChannel);
+  // test if the new channel added success
+  const addResponse = await filterChannel(request, testChannel.name);
+  expect(addResponse[0].name).toEqual(testChannel.name);
+  // test delete function
+  await deleteChannel(request, testChannel._id, testChannel.name);
+  // test if the new channel deleted success
+  const deleteResponse = await filterChannel(request, testChannel.name);
+  expect(deleteResponse).toEqual([]);
 });
