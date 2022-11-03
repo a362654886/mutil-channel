@@ -5,7 +5,7 @@ const generateReturnBody_1 = require("../tools/generateReturnBody");
 const messageController_1 = require("../controller/messageController");
 const messageInsert = async (event, context) => {
     const { messageBody } = JSON.parse(event.body) || {};
-    return (0, generateReturnBody_1.getResult)(messageBody, messageController_1.insertMessage);
+    return (0, generateReturnBody_1.getResult)(messageBody, messageController_1.insertMessage, "success");
 };
 exports.messageInsert = messageInsert;
 const messagesGetByPage = async (event, context) => {
@@ -26,11 +26,11 @@ const messagesGetBySearch = async (event, context) => {
 exports.messagesGetBySearch = messagesGetBySearch;
 const messageUpdate = async (event, context) => {
     const { messageBody } = JSON.parse(event.body) || {};
-    return (0, generateReturnBody_1.getResult)(messageBody, messageController_1.updateMessage);
+    return (0, generateReturnBody_1.getResult)(messageBody, messageController_1.updateMessage, "success");
 };
 exports.messageUpdate = messageUpdate;
 const messageDelete = async (event, context) => {
     const { messageId } = event.queryStringParameters;
-    return (0, generateReturnBody_1.getResult)(messageId, messageController_1.deleteMessage);
+    return (0, generateReturnBody_1.getResult)(messageId, messageController_1.deleteMessage, "success");
 };
 exports.messageDelete = messageDelete;

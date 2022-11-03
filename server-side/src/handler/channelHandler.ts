@@ -23,7 +23,8 @@ const channelInsert: Handler = async (event, context) => {
   const { channelBody } = JSON.parse(event.body) || {};
   return getResult<Channel, InsertOneWriteOpResult<allTypes>>(
     channelBody,
-    insertChannel
+    insertChannel,
+    "success"
   );
 };
 
@@ -54,14 +55,19 @@ const channelsGetBySearch: Handler = async (event, context) => {
 
 const channelUpdate: Handler = async (event, context) => {
   const { channelBody } = JSON.parse(event.body) || {};
-  return getResult<Channel, UpdateWriteOpResult>(channelBody, updateChannel);
+  return getResult<Channel, UpdateWriteOpResult>(
+    channelBody,
+    updateChannel,
+    "success"
+  );
 };
 
 const channelDelete: Handler = async (event, context) => {
   const { channelId } = event.queryStringParameters;
   return getResult<string, DeleteWriteOpResultObject | null>(
     channelId,
-    deleteChannel
+    deleteChannel,
+    "success"
   );
 };
 

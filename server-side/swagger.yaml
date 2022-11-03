@@ -1,7 +1,7 @@
 ---
 swagger: "2.0"
 info:
-  version: "2022-10-31T08:12:14Z"
+  version: '1.00'
   title: "serverless-code-dev"
 host: "zlfmg2s8n4.execute-api.us-east-1.amazonaws.com"
 basePath: "/dev"
@@ -10,7 +10,27 @@ schemes:
 paths:
   /channelDelete:
     delete:
-      responses: {}
+      summary: delete one channel
+      description: delete one channel by channedId
+      parameters:
+        - name: channelId
+          in: query
+          type: string
+      responses: 
+        200:
+          description: success
+          schema: 
+            items:
+              properties:
+                result: 
+                  type: string
+        400:
+          description: fail
+          schema: 
+            items:
+              properties:
+                result: 
+                  type: string
     options:
       consumes:
       - "application/json"
@@ -28,7 +48,30 @@ paths:
               type: "string"
   /channelInsert:
     post:
-      responses: {}
+      summary: add channel 
+      description: add one channel 
+      parameters:
+        - name: channelBody
+          in: body
+          schema:
+            properties:
+              channelBody:
+                $ref: "#/definitions/Channel"
+      responses: 
+        200:
+          description: success
+          schema: 
+            items:
+              properties:
+                result: 
+                  type: string
+        400:
+          description: fail
+          schema: 
+            items:
+              properties:
+                result: 
+                  type: string
     options:
       consumes:
       - "application/json"
@@ -46,7 +89,30 @@ paths:
               type: "string"
   /channelUpdate:
     put:
-      responses: {}
+      summary: update channel
+      description: update one channel
+      parameters:
+        - name: channelBody
+          in: body
+          schema:
+            properties:
+              channelBody:
+                $ref: "#/definitions/Channel"
+      responses: 
+        200:
+          description: success
+          schema: 
+            items:
+              properties:
+                result: 
+                  type: string
+        400:
+          description: fail
+          schema: 
+            items:
+              properties:
+                result: 
+                  type: string
     options:
       consumes:
       - "application/json"
@@ -64,7 +130,38 @@ paths:
               type: "string"
   /channelsGetByPage:
     get:
-      responses: {}
+      summary: delete user
+      description: delete user body to databse
+      parameters:
+        - name: sortType
+          in: query
+          type: string
+        - name: sortAscend
+          in: query
+          type: boolean
+        - name: page
+          in: query
+          type: number 
+        - name: pageSize
+          in: query
+          type: number
+      responses: 
+        200:
+          description: success
+          schema:
+            items:
+                properties:
+                  channels:
+                    $ref: "#/definitions/Channel"
+                  count:
+                    type: number
+        400:
+          description: fail
+          schema: 
+            items:
+              properties:
+                result: 
+                  type: string
     options:
       consumes:
       - "application/json"
@@ -82,7 +179,21 @@ paths:
               type: "string"
   /channelsGetBySearch:
     get:
-      responses: {}
+      summary: delete user
+      description: delete user body to databse
+      responses: 
+        200:
+          description: success
+          schema:
+            items:
+              $ref: "#/definitions/Channel"
+        400:
+          description: fail
+          schema: 
+            items:
+              properties:
+                result: 
+                  type: string
     options:
       consumes:
       - "application/json"
@@ -98,3 +209,28 @@ paths:
               type: "string"
             Access-Control-Allow-Headers:
               type: "string"
+definitions:
+  Channel:
+    type: object
+    properties:
+      _id:
+        type: string
+      name:
+        type: string
+      message: 
+        type: array
+        items:
+          type: object
+  Message:
+    type: object
+    properties:
+      _id:
+        type: string
+      channelId:
+        type: string
+      createAt:
+        type: number
+      title:
+        type: string
+      context:
+        type: string

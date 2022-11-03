@@ -17,7 +17,7 @@ test("test channel functions", async ({ request }) => {
   const addResponse = await filterChannel(request, testChannel.name);
   expect(addResponse[0].name).toEqual(testChannel.name);
   // test delete function
-  await deleteChannel(request, testChannel._id, testChannel.name);
+  await deleteChannel(request, testChannel._id);
   // test if the new channel deleted success
   const deleteResponse = await filterChannel(request, testChannel.name);
   expect(deleteResponse).toEqual([]);

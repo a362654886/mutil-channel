@@ -5,7 +5,7 @@ const channelController_1 = require("../controller/channelController");
 const generateReturnBody_1 = require("../tools/generateReturnBody");
 const channelInsert = async (event, context) => {
     const { channelBody } = JSON.parse(event.body) || {};
-    return (0, generateReturnBody_1.getResult)(channelBody, channelController_1.insertChannel);
+    return (0, generateReturnBody_1.getResult)(channelBody, channelController_1.insertChannel, "success");
 };
 exports.channelInsert = channelInsert;
 const channelsGetByPage = async (event, context) => {
@@ -26,11 +26,11 @@ const channelsGetBySearch = async (event, context) => {
 exports.channelsGetBySearch = channelsGetBySearch;
 const channelUpdate = async (event, context) => {
     const { channelBody } = JSON.parse(event.body) || {};
-    return (0, generateReturnBody_1.getResult)(channelBody, channelController_1.updateChannel);
+    return (0, generateReturnBody_1.getResult)(channelBody, channelController_1.updateChannel, "success");
 };
 exports.channelUpdate = channelUpdate;
 const channelDelete = async (event, context) => {
-    const { animeId } = event.queryStringParameters;
-    return (0, generateReturnBody_1.getResult)(animeId, channelController_1.deleteChannel);
+    const { channelId } = event.queryStringParameters;
+    return (0, generateReturnBody_1.getResult)(channelId, channelController_1.deleteChannel, "success");
 };
 exports.channelDelete = channelDelete;

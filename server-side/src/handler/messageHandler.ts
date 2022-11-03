@@ -4,18 +4,6 @@ import {
   InsertOneWriteOpResult,
   UpdateWriteOpResult,
 } from "mongodb";
-import {
-  deleteChannel,
-  getChanelByPage,
-  getChanelBySearch,
-  insertChannel,
-  updateChannel,
-} from "../controller/channelController";
-import {
-  Channel,
-  ChannelGetByPagePara,
-  ChannelGetBySearchPara,
-} from "../type/channelType";
 import { allTypes } from "../type/types";
 import { getResult } from "../tools/generateReturnBody";
 import {
@@ -35,7 +23,8 @@ const messageInsert: Handler = async (event, context) => {
   const { messageBody } = JSON.parse(event.body) || {};
   return getResult<Message, InsertOneWriteOpResult<allTypes>>(
     messageBody,
-    insertMessage
+    insertMessage,
+    "success"
   );
 };
 
@@ -68,14 +57,19 @@ const messagesGetBySearch: Handler = async (event, context) => {
 
 const messageUpdate: Handler = async (event, context) => {
   const { messageBody } = JSON.parse(event.body) || {};
-  return getResult<Message, UpdateWriteOpResult>(messageBody, updateMessage);
+  return getResult<Message, UpdateWriteOpResult>(
+    messageBody,
+    updateMessage,
+    "success"
+  );
 };
 
 const messageDelete: Handler = async (event, context) => {
   const { messageId } = event.queryStringParameters;
   return getResult<string, DeleteWriteOpResultObject | null>(
     messageId,
-    deleteMessage
+    deleteMessage,
+    "success"
   );
 };
 
