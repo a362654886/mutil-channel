@@ -4,6 +4,11 @@
 
 Front-end structure:
 
+How to run it:
+
+
+How to test it:
+
 
 # Back-end
 
