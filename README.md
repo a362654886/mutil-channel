@@ -42,7 +42,11 @@ LINK: https://master.d1svl08733sozm.amplifyapp.com/
 
 ![image](https://user-images.githubusercontent.com/41553112/199978243-33a806b8-a7f4-4c94-8ddd-58dadbdac2bf.png)
 
-npm run srat/yarn start: run it on local and connect local backend
+npm install. 
+
+then
+
+npm run start/yarn start: run it on local and connect local backend
 
 npm run srart:prod/yarn start:prod: run it on local and connect prod backend
 
