@@ -81,10 +81,20 @@ export function* deleteMessageAsync(
     // yield put(statusActions.loading(false));
   }
 }
+export function* deleteChannelAsync(action: PayloadAction<string>) {
+  try {
+    yield call(() => ChannelAPI.deleteChannel(action.payload));
+  } catch (err) {
+    console.log(err);
+  } finally {
+    // yield put(statusActions.loading(false));
+  }
+}
 
 export function* channelsSaga() {
   yield takeLatest(channelsAction.getChannels.type, getChannelsAsync);
   yield takeLatest(channelsAction.addChannel.type, addChannelAsync);
   yield takeLatest(channelsAction.addMessage.type, addMessageAsync);
   yield takeLatest(channelsAction.deleteMessage.type, deleteMessageAsync);
+  yield takeLatest(channelsAction.deleteChannel.type, deleteChannelAsync);
 }

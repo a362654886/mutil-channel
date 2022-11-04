@@ -49,7 +49,7 @@ const MainPage = (): JSX.Element => {
   };
 
   const deleteChannel = (deleteChannelId: string) => {
-    console.log(deleteChannelId);
+    dispatch(channelsActions.deleteChannel(deleteChannelId));
   };
 
   const filterByPage = (page: number) => {
