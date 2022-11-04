@@ -44,7 +44,7 @@ LINK: https://master.d1svl08733sozm.amplifyapp.com/
 
 npm run srat/yarn start: run it on local and connect local backend
 
-npm run srat:prod/yarn start:prod: run it on local and connect prod backend
+npm run srart:prod/yarn start:prod: run it on local and connect prod backend
 
 
 ### How to test it:
