@@ -1,5 +1,13 @@
 # mutil-channel
 
+## introduce
+
+A small product used for excersise.
+fornt-end skills: javascript, typescript, redux, saga, 
+backend-end skills: node.js, typescript, serverless, mongoDB
+test: Jest, playwright
+document: swagger
+
 ## Front-end
 
 LINK: https://master.d1svl08733sozm.amplifyapp.com/
