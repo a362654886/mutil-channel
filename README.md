@@ -90,6 +90,10 @@ note: I recommended Jest should be used for functional test and playwright for U
 
 .env.dev/.env.prod: env setting files
 
+-swagger.yml:  swagger file
+
+-serverless.yml: serverless config file
+
 
 
 ### **How to run it:**
