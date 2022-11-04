@@ -12,7 +12,7 @@ How to test it:
 
 # Back-end
 
-Back-end structure:
+**Back-end structure:**
 
 ![image](https://user-images.githubusercontent.com/41553112/199860022-a82ffb76-d10e-408b-b5fa-4f559e2a96b5.png)
 
@@ -40,21 +40,27 @@ test/playwright: playwright test files
 
 
 
-How to run it:
+**How to run it:**
 
 npm run install
 
 -- run it on local 
+
 serverless offline start
+
 -- deploy it (note: need realted aws role)
+
 serverless deploy -v  
 
-How to test it:
+**How to test it:**
+
 jest test: npm run testJest
+
 playwright test: npm run testPlayRight
+
 
 note: I recommended Jest should be used for functional test and playwright for API test. Now the test files are not completed, only list some examples.
 
 
-API Document: https://app.swaggerhub.com/apis-docs/a362654886/mutil-channel/1.00#/
+**API Document**: https://app.swaggerhub.com/apis-docs/a362654886/mutil-channel/1.00#/
 
