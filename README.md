@@ -16,6 +16,13 @@ How to test it:
 
 ![image](https://user-images.githubusercontent.com/41553112/199860022-a82ffb76-d10e-408b-b5fa-4f559e2a96b5.png)
 
+SERCER-SIDE
+>.serverless
+>dist
+>node_modules
+>src
+>>AWS
+
 dist: TypeScript transpiled javascript file
 
 src/AWS: aws server related functions
