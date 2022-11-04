@@ -40,7 +40,7 @@ test/playwright: playwright test files
 
 
 
-**How to run it:**
+### **How to run it:**
 
 npm run install
 
@@ -52,7 +52,7 @@ serverless offline start
 
 serverless deploy -v  
 
-**How to test it:**
+### **How to test it:**
 
 jest test: npm run testJest
 
