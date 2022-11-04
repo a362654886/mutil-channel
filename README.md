@@ -1,27 +1,20 @@
 # mutil-channel
 
-# Front-end
+## Front-end
 
-Front-end structure:
+###Front-end structure:
 
-How to run it:
-
-
-How to test it:
+###How to run it:
 
 
-# Back-end
+###How to test it:
+
+
+## Back-end
 
 ### BackEnd Structure
 
 ![image](https://user-images.githubusercontent.com/41553112/199860022-a82ffb76-d10e-408b-b5fa-4f559e2a96b5.png)
-
-SERCER-SIDE
->.serverless
->dist
->node_modules
->src
->>AWS
 
 dist: TypeScript transpiled javascript file
 
