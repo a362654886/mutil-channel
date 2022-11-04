@@ -19,6 +19,9 @@ import {
 import { allTypes } from "../type/types";
 import { getResult } from "../tools/generateReturnBody";
 
+/**
+ * insert Channel handler
+ */
 const channelInsert: Handler = async (event, context) => {
   const { channelBody } = JSON.parse(event.body) || {};
   return getResult<Channel, InsertOneWriteOpResult<allTypes>>(
@@ -28,6 +31,9 @@ const channelInsert: Handler = async (event, context) => {
   );
 };
 
+/**
+ * get Channels by page handler
+ */
 const channelsGetByPage: Handler = async (event, context) => {
   const { sortType, sortAscend, page, pageSize } = event.queryStringParameters;
   return getResult<
@@ -44,6 +50,9 @@ const channelsGetByPage: Handler = async (event, context) => {
   );
 };
 
+/**
+ * get Channels by search handler
+ */
 const channelsGetBySearch: Handler = async (event, context) => {
   const { name, sortType, sortAscend } = event.queryStringParameters;
   console.log(name);
@@ -53,6 +62,9 @@ const channelsGetBySearch: Handler = async (event, context) => {
   );
 };
 
+/**
+ * update Channel handler
+ */
 const channelUpdate: Handler = async (event, context) => {
   const { channelBody } = JSON.parse(event.body) || {};
   return getResult<Channel, UpdateWriteOpResult>(
@@ -62,6 +74,9 @@ const channelUpdate: Handler = async (event, context) => {
   );
 };
 
+/**
+ * delete Channel handler
+ */
 const channelDelete: Handler = async (event, context) => {
   const { channelId } = event.queryStringParameters;
   return getResult<string, DeleteWriteOpResultObject | null>(

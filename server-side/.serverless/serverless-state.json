@@ -249,7 +249,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/serverless-code/dev/1667485046814-2022-11-03T14:17:26.814Z/serverless-code.zip"
+                "S3Key": "serverless/serverless-code/dev/1667525095178-2022-11-04T01:24:55.178Z/serverless-code.zip"
               },
               "Handler": "dist/src/handler/channelHandler.channelInsert",
               "Runtime": "nodejs12.x",
@@ -274,7 +274,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/serverless-code/dev/1667485046814-2022-11-03T14:17:26.814Z/serverless-code.zip"
+                "S3Key": "serverless/serverless-code/dev/1667525095178-2022-11-04T01:24:55.178Z/serverless-code.zip"
               },
               "Handler": "dist/src/handler/channelHandler.channelsGetByPage",
               "Runtime": "nodejs12.x",
@@ -299,7 +299,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/serverless-code/dev/1667485046814-2022-11-03T14:17:26.814Z/serverless-code.zip"
+                "S3Key": "serverless/serverless-code/dev/1667525095178-2022-11-04T01:24:55.178Z/serverless-code.zip"
               },
               "Handler": "dist/src/handler/channelHandler.channelsGetBySearch",
               "Runtime": "nodejs12.x",
@@ -324,7 +324,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/serverless-code/dev/1667485046814-2022-11-03T14:17:26.814Z/serverless-code.zip"
+                "S3Key": "serverless/serverless-code/dev/1667525095178-2022-11-04T01:24:55.178Z/serverless-code.zip"
               },
               "Handler": "dist/src/handler/channelHandler.channelUpdate",
               "Runtime": "nodejs12.x",
@@ -349,7 +349,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/serverless-code/dev/1667485046814-2022-11-03T14:17:26.814Z/serverless-code.zip"
+                "S3Key": "serverless/serverless-code/dev/1667525095178-2022-11-04T01:24:55.178Z/serverless-code.zip"
               },
               "Handler": "dist/src/handler/channelHandler.channelDelete",
               "Runtime": "nodejs12.x",
@@ -374,7 +374,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/serverless-code/dev/1667485046814-2022-11-03T14:17:26.814Z/serverless-code.zip"
+                "S3Key": "serverless/serverless-code/dev/1667525095178-2022-11-04T01:24:55.178Z/serverless-code.zip"
               },
               "Handler": "dist/src/handler/messageHandler.messageInsert",
               "Runtime": "nodejs12.x",
@@ -399,7 +399,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/serverless-code/dev/1667485046814-2022-11-03T14:17:26.814Z/serverless-code.zip"
+                "S3Key": "serverless/serverless-code/dev/1667525095178-2022-11-04T01:24:55.178Z/serverless-code.zip"
               },
               "Handler": "dist/src/handler/messageHandler.messagesGetByPage",
               "Runtime": "nodejs12.x",
@@ -424,7 +424,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/serverless-code/dev/1667485046814-2022-11-03T14:17:26.814Z/serverless-code.zip"
+                "S3Key": "serverless/serverless-code/dev/1667525095178-2022-11-04T01:24:55.178Z/serverless-code.zip"
               },
               "Handler": "dist/src/handler/messageHandler.messagesGetBySearch",
               "Runtime": "nodejs12.x",
@@ -449,7 +449,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/serverless-code/dev/1667485046814-2022-11-03T14:17:26.814Z/serverless-code.zip"
+                "S3Key": "serverless/serverless-code/dev/1667525095178-2022-11-04T01:24:55.178Z/serverless-code.zip"
               },
               "Handler": "dist/src/handler/messageHandler.messageUpdate",
               "Runtime": "nodejs12.x",
@@ -474,7 +474,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/serverless-code/dev/1667485046814-2022-11-03T14:17:26.814Z/serverless-code.zip"
+                "S3Key": "serverless/serverless-code/dev/1667525095178-2022-11-04T01:24:55.178Z/serverless-code.zip"
               },
               "Handler": "dist/src/handler/messageHandler.messageDelete",
               "Runtime": "nodejs12.x",
@@ -1550,7 +1550,7 @@
               "PermissionsNestedStack"
             ]
           },
-          "ApiGatewayDeployment1667485031950": {
+          "ApiGatewayDeployment1667525080098": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -1817,7 +1817,7 @@
                     {
                       "Ref": "ServerlessDeploymentBucket"
                     },
-                    "serverless/serverless-code/dev/1667485046814-2022-11-03T14:17:26.814Z",
+                    "serverless/serverless-code/dev/1667525095178-2022-11-04T01:24:55.178Z",
                     "cloudformation-template-Permissions-nested-stack.json"
                   ]
                 ]
@@ -1854,7 +1854,7 @@
                     {
                       "Ref": "ServerlessDeploymentBucket"
                     },
-                    "serverless/serverless-code/dev/1667485046814-2022-11-03T14:17:26.814Z",
+                    "serverless/serverless-code/dev/1667525095178-2022-11-04T01:24:55.178Z",
                     "cloudformation-template-API-nested-stack.json"
                   ]
                 ]
@@ -1868,29 +1868,29 @@
             "Type": "AWS::CloudFormation::Stack",
             "Properties": {
               "Parameters": {
-                "ChannelsGetByPageLambdaFunctionParameter": {
-                  "Ref": "ChannelsGetByPageLambdaFunction"
-                },
                 "ChannelInsertLambdaFunctionParameter": {
                   "Ref": "ChannelInsertLambdaFunction"
                 },
-                "ChannelDeleteLambdaFunctionParameter": {
-                  "Ref": "ChannelDeleteLambdaFunction"
-                },
-                "ChannelsGetBySearchLambdaFunctionParameter": {
-                  "Ref": "ChannelsGetBySearchLambdaFunction"
+                "ChannelsGetByPageLambdaFunctionParameter": {
+                  "Ref": "ChannelsGetByPageLambdaFunction"
                 },
                 "ChannelUpdateLambdaFunctionParameter": {
                   "Ref": "ChannelUpdateLambdaFunction"
                 },
+                "ChannelsGetBySearchLambdaFunctionParameter": {
+                  "Ref": "ChannelsGetBySearchLambdaFunction"
+                },
+                "ChannelDeleteLambdaFunctionParameter": {
+                  "Ref": "ChannelDeleteLambdaFunction"
+                },
                 "MessageInsertLambdaFunctionParameter": {
                   "Ref": "MessageInsertLambdaFunction"
                 },
-                "MessagesGetBySearchLambdaFunctionParameter": {
-                  "Ref": "MessagesGetBySearchLambdaFunction"
-                },
                 "MessagesGetByPageLambdaFunctionParameter": {
                   "Ref": "MessagesGetByPageLambdaFunction"
+                },
+                "MessagesGetBySearchLambdaFunctionParameter": {
+                  "Ref": "MessagesGetBySearchLambdaFunction"
                 },
                 "MessageUpdateLambdaFunctionParameter": {
                   "Ref": "MessageUpdateLambdaFunction"
@@ -1907,21 +1907,21 @@
                     {
                       "Ref": "ServerlessDeploymentBucket"
                     },
-                    "serverless/serverless-code/dev/1667485046814-2022-11-03T14:17:26.814Z",
+                    "serverless/serverless-code/dev/1667525095178-2022-11-04T01:24:55.178Z",
                     "cloudformation-template-Versions-nested-stack.json"
                   ]
                 ]
               }
             },
             "DependsOn": [
-              "ChannelsGetByPageLambdaFunction",
               "ChannelInsertLambdaFunction",
-              "ChannelDeleteLambdaFunction",
-              "ChannelsGetBySearchLambdaFunction",
+              "ChannelsGetByPageLambdaFunction",
               "ChannelUpdateLambdaFunction",
+              "ChannelsGetBySearchLambdaFunction",
+              "ChannelDeleteLambdaFunction",
               "MessageInsertLambdaFunction",
-              "MessagesGetBySearchLambdaFunction",
               "MessagesGetByPageLambdaFunction",
+              "MessagesGetBySearchLambdaFunction",
               "MessageUpdateLambdaFunction",
               "MessageDeleteLambdaFunction"
             ]
@@ -1936,52 +1936,28 @@
               "Name": "sls-serverless-code-dev-ServerlessDeploymentBucketName"
             }
           },
-          "ChannelsGetByPageLambdaFunctionQualifiedArn": {
-            "Description": "Current Lambda function version",
-            "Value": {
-              "Fn::GetAtt": [
-                "VersionsNestedStack",
-                "Outputs.ChannelsGetByPageLambdaVersion2oG2CKLTwQtFeJK2R9F2M0eRWPCAkDeRoTsbzZQ3o"
-              ]
-            },
-            "Export": {
-              "Name": "sls-serverless-code-dev-ChannelsGetByPageLambdaFunctionQualifiedArn"
-            }
-          },
           "ChannelInsertLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
               "Fn::GetAtt": [
                 "VersionsNestedStack",
-                "Outputs.ChannelInsertLambdaVersionbD87JAPBGVqhV1Gkt7Yz2OJgX13I4XL8VVrxgECFi8E"
+                "Outputs.ChannelInsertLambdaVersionT8IVUB8Jc5Dun4seXJTg8Hrmd6Cfar97fOfNywXA8"
               ]
             },
             "Export": {
               "Name": "sls-serverless-code-dev-ChannelInsertLambdaFunctionQualifiedArn"
             }
           },
-          "ChannelDeleteLambdaFunctionQualifiedArn": {
+          "ChannelsGetByPageLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
               "Fn::GetAtt": [
                 "VersionsNestedStack",
-                "Outputs.ChannelDeleteLambdaVersion1UH34b7NLY5G1X0y3BohwuLKvy0sGViCxP680wkEwA"
+                "Outputs.ChannelsGetByPageLambdaVersionrK6Gg6oYhymbKTW2ayuQGiMAFMxJ06OQZ1N08EvOE"
               ]
             },
             "Export": {
-              "Name": "sls-serverless-code-dev-ChannelDeleteLambdaFunctionQualifiedArn"
-            }
-          },
-          "ChannelsGetBySearchLambdaFunctionQualifiedArn": {
-            "Description": "Current Lambda function version",
-            "Value": {
-              "Fn::GetAtt": [
-                "VersionsNestedStack",
-                "Outputs.ChannelsGetBySearchLambdaVersionGKKX4Oy63wsbNSoaXyNUsb63HUctpSQvFJwztGPoY"
-              ]
-            },
-            "Export": {
-              "Name": "sls-serverless-code-dev-ChannelsGetBySearchLambdaFunctionQualifiedArn"
+              "Name": "sls-serverless-code-dev-ChannelsGetByPageLambdaFunctionQualifiedArn"
             }
           },
           "ChannelUpdateLambdaFunctionQualifiedArn": {
@@ -1989,11 +1965,35 @@
             "Value": {
               "Fn::GetAtt": [
                 "VersionsNestedStack",
-                "Outputs.ChannelUpdateLambdaVersiongl7FUumLSA2GCARpwKCnRrcNNWAYOB8qIjS5xPDQkOc"
+                "Outputs.ChannelUpdateLambdaVersionv9Av1U4OZWVmQneowidtGurmh6BmsEtefFVRQbUeM"
               ]
             },
             "Export": {
               "Name": "sls-serverless-code-dev-ChannelUpdateLambdaFunctionQualifiedArn"
+            }
+          },
+          "ChannelsGetBySearchLambdaFunctionQualifiedArn": {
+            "Description": "Current Lambda function version",
+            "Value": {
+              "Fn::GetAtt": [
+                "VersionsNestedStack",
+                "Outputs.ChannelsGetBySearchLambdaVersionvwZvQQBTsNlKCcV5t2DUVl1zfdESub08zn29axaBuI"
+              ]
+            },
+            "Export": {
+              "Name": "sls-serverless-code-dev-ChannelsGetBySearchLambdaFunctionQualifiedArn"
+            }
+          },
+          "ChannelDeleteLambdaFunctionQualifiedArn": {
+            "Description": "Current Lambda function version",
+            "Value": {
+              "Fn::GetAtt": [
+                "VersionsNestedStack",
+                "Outputs.ChannelDeleteLambdaVersionfmmu2aWGN6jW08KYFwnjRtCoMwF5bDgFfa8vjztZj0"
+              ]
+            },
+            "Export": {
+              "Name": "sls-serverless-code-dev-ChannelDeleteLambdaFunctionQualifiedArn"
             }
           },
           "MessageInsertLambdaFunctionQualifiedArn": {
@@ -2001,23 +2001,11 @@
             "Value": {
               "Fn::GetAtt": [
                 "VersionsNestedStack",
-                "Outputs.MessageInsertLambdaVersionMQqINQwawrn1hzwlzPm3ZgW3uQeVKKjySaG4rpfDw"
+                "Outputs.MessageInsertLambdaVersionlXwZMw9yTg3iF7tWhOvRNQ1bBKO4AJ9gTf3DFkeb9lM"
               ]
             },
             "Export": {
               "Name": "sls-serverless-code-dev-MessageInsertLambdaFunctionQualifiedArn"
-            }
-          },
-          "MessagesGetBySearchLambdaFunctionQualifiedArn": {
-            "Description": "Current Lambda function version",
-            "Value": {
-              "Fn::GetAtt": [
-                "VersionsNestedStack",
-                "Outputs.MessagesGetBySearchLambdaVersionAL3Lzx60O4R4EWaP4BHmagyTquWwnXZgdOMNsmVbz8"
-              ]
-            },
-            "Export": {
-              "Name": "sls-serverless-code-dev-MessagesGetBySearchLambdaFunctionQualifiedArn"
             }
           },
           "MessagesGetByPageLambdaFunctionQualifiedArn": {
@@ -2025,11 +2013,23 @@
             "Value": {
               "Fn::GetAtt": [
                 "VersionsNestedStack",
-                "Outputs.MessagesGetByPageLambdaVersione3Na8TMshVQ1gBeAlpXkIzqtJjKkJA3V0grEaZQDsbg"
+                "Outputs.MessagesGetByPageLambdaVersionucB14QhVrbnhUdShNYWft1I5riEXJdOQ4JxrxY10Ow"
               ]
             },
             "Export": {
               "Name": "sls-serverless-code-dev-MessagesGetByPageLambdaFunctionQualifiedArn"
+            }
+          },
+          "MessagesGetBySearchLambdaFunctionQualifiedArn": {
+            "Description": "Current Lambda function version",
+            "Value": {
+              "Fn::GetAtt": [
+                "VersionsNestedStack",
+                "Outputs.MessagesGetBySearchLambdaVersiontWegTmWKoC8FAcARgGOn6wyiuIBkmZ1U0tSXyGWxTmc"
+              ]
+            },
+            "Export": {
+              "Name": "sls-serverless-code-dev-MessagesGetBySearchLambdaFunctionQualifiedArn"
             }
           },
           "MessageUpdateLambdaFunctionQualifiedArn": {
@@ -2037,7 +2037,7 @@
             "Value": {
               "Fn::GetAtt": [
                 "VersionsNestedStack",
-                "Outputs.MessageUpdateLambdaVersionV2QUap99dbF2uqN2yl7xoDEE2irNWunqJsju2nOgg7U"
+                "Outputs.MessageUpdateLambdaVersionlH4f9RYqXg1tQTec3UMiB5OLF1lm6YPR25VUFMtEP0"
               ]
             },
             "Export": {
@@ -2049,7 +2049,7 @@
             "Value": {
               "Fn::GetAtt": [
                 "VersionsNestedStack",
-                "Outputs.MessageDeleteLambdaVersionSyWBGpMNLLwJIfHDGomJVA1Ot66wiLWzq8f95ngWCvw"
+                "Outputs.MessageDeleteLambdaVersionrjndXFktqXLh6uqlZWWlwk2XY4O71TAlEvhFLIUZQ"
               ]
             },
             "Export": {
@@ -2214,7 +2214,7 @@
         "timeout": 6,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "ChannelInsertLambdaVersionbD87JAPBGVqhV1Gkt7Yz2OJgX13I4XL8VVrxgECFi8E"
+        "versionLogicalId": "ChannelInsertLambdaVersionT8IVUB8Jc5Dun4seXJTg8Hrmd6Cfar97fOfNywXA8"
       },
       "channelsGetByPage": {
         "handler": "dist/src/handler/channelHandler.channelsGetByPage",
@@ -2249,7 +2249,7 @@
         "timeout": 6,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "ChannelsGetByPageLambdaVersion2oG2CKLTwQtFeJK2R9F2M0eRWPCAkDeRoTsbzZQ3o"
+        "versionLogicalId": "ChannelsGetByPageLambdaVersionrK6Gg6oYhymbKTW2ayuQGiMAFMxJ06OQZ1N08EvOE"
       },
       "channelsGetBySearch": {
         "handler": "dist/src/handler/channelHandler.channelsGetBySearch",
@@ -2284,7 +2284,7 @@
         "timeout": 6,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "ChannelsGetBySearchLambdaVersionGKKX4Oy63wsbNSoaXyNUsb63HUctpSQvFJwztGPoY"
+        "versionLogicalId": "ChannelsGetBySearchLambdaVersionvwZvQQBTsNlKCcV5t2DUVl1zfdESub08zn29axaBuI"
       },
       "channelUpdate": {
         "handler": "dist/src/handler/channelHandler.channelUpdate",
@@ -2319,7 +2319,7 @@
         "timeout": 6,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "ChannelUpdateLambdaVersiongl7FUumLSA2GCARpwKCnRrcNNWAYOB8qIjS5xPDQkOc"
+        "versionLogicalId": "ChannelUpdateLambdaVersionv9Av1U4OZWVmQneowidtGurmh6BmsEtefFVRQbUeM"
       },
       "channelDelete": {
         "handler": "dist/src/handler/channelHandler.channelDelete",
@@ -2354,7 +2354,7 @@
         "timeout": 6,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "ChannelDeleteLambdaVersion1UH34b7NLY5G1X0y3BohwuLKvy0sGViCxP680wkEwA"
+        "versionLogicalId": "ChannelDeleteLambdaVersionfmmu2aWGN6jW08KYFwnjRtCoMwF5bDgFfa8vjztZj0"
       },
       "messageInsert": {
         "handler": "dist/src/handler/messageHandler.messageInsert",
@@ -2389,7 +2389,7 @@
         "timeout": 6,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "MessageInsertLambdaVersionMQqINQwawrn1hzwlzPm3ZgW3uQeVKKjySaG4rpfDw"
+        "versionLogicalId": "MessageInsertLambdaVersionlXwZMw9yTg3iF7tWhOvRNQ1bBKO4AJ9gTf3DFkeb9lM"
       },
       "messagesGetByPage": {
         "handler": "dist/src/handler/messageHandler.messagesGetByPage",
@@ -2424,7 +2424,7 @@
         "timeout": 6,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "MessagesGetByPageLambdaVersione3Na8TMshVQ1gBeAlpXkIzqtJjKkJA3V0grEaZQDsbg"
+        "versionLogicalId": "MessagesGetByPageLambdaVersionucB14QhVrbnhUdShNYWft1I5riEXJdOQ4JxrxY10Ow"
       },
       "messagesGetBySearch": {
         "handler": "dist/src/handler/messageHandler.messagesGetBySearch",
@@ -2459,7 +2459,7 @@
         "timeout": 6,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "MessagesGetBySearchLambdaVersionAL3Lzx60O4R4EWaP4BHmagyTquWwnXZgdOMNsmVbz8"
+        "versionLogicalId": "MessagesGetBySearchLambdaVersiontWegTmWKoC8FAcARgGOn6wyiuIBkmZ1U0tSXyGWxTmc"
       },
       "messageUpdate": {
         "handler": "dist/src/handler/messageHandler.messageUpdate",
@@ -2494,7 +2494,7 @@
         "timeout": 6,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "MessageUpdateLambdaVersionV2QUap99dbF2uqN2yl7xoDEE2irNWunqJsju2nOgg7U"
+        "versionLogicalId": "MessageUpdateLambdaVersionlH4f9RYqXg1tQTec3UMiB5OLF1lm6YPR25VUFMtEP0"
       },
       "messageDelete": {
         "handler": "dist/src/handler/messageHandler.messageDelete",
@@ -2529,7 +2529,7 @@
         "timeout": 6,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "MessageDeleteLambdaVersionSyWBGpMNLLwJIfHDGomJVA1Ot66wiLWzq8f95ngWCvw"
+        "versionLogicalId": "MessageDeleteLambdaVersionrjndXFktqXLh6uqlZWWlwk2XY4O71TAlEvhFLIUZQ"
       }
     },
     "configValidationMode": "warn",
@@ -2557,7 +2557,7 @@
     "artifact": "D:\\Github\\mutil-channel\\mutil-channel\\server-side\\.serverless\\serverless-code.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/serverless-code/dev/1667485046814-2022-11-03T14:17:26.814Z",
+    "artifactDirectoryName": "serverless/serverless-code/dev/1667525095178-2022-11-04T01:24:55.178Z",
     "artifact": "serverless-code.zip"
   }
 }

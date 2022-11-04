@@ -4,10 +4,18 @@ exports.deleteChannel = exports.updateChannel = exports.getChanelBySearch = expo
 const MongoDBService_1 = require("../service/MongoDBService");
 const sortFn_1 = require("../tools/sortFn");
 const tableName_1 = require("../type/tableName");
-const const_1 = require("../const");
 const getChannelWithMessageLookuo_1 = require("../tools/lookup/getChannelWithMessageLookuo");
+const const_1 = require("../common/const");
+/**
+ * insert Channel to database
+ * @param channelBody
+ */
 const insertChannel = async (channelBody) => (0, MongoDBService_1.dbServiceInsert)(tableName_1.DBTableName.CHANNEL, channelBody);
 exports.insertChannel = insertChannel;
+/**
+ * get channels according to sortType, sortAscend, page, pageSize
+ * @param para
+ */
 const getChanelByPage = async (para) => {
     try {
         const sortBody = (0, sortFn_1.getChannelSortType)(para.sortType, para.sortAscend);
@@ -23,6 +31,10 @@ const getChanelByPage = async (para) => {
     }
 };
 exports.getChanelByPage = getChanelByPage;
+/**
+ * filter channels according to name, sortType, sortAscend
+ * @param para
+ */
 const getChanelBySearch = async (para) => {
     try {
         const sortBody = (0, sortFn_1.getChannelSortType)(para.sortType, para.sortAscend);
@@ -34,6 +46,10 @@ const getChanelBySearch = async (para) => {
     }
 };
 exports.getChanelBySearch = getChanelBySearch;
+/**
+ * update channel
+ * @param para
+ */
 const updateChannel = async (channel) => {
     const filterObj = { _id: channel._id };
     const body = {
@@ -44,12 +60,18 @@ const updateChannel = async (channel) => {
     return (0, MongoDBService_1.dbServiceUpdate)(tableName_1.DBTableName.CHANNEL, filterObj, body);
 };
 exports.updateChannel = updateChannel;
+/**
+ * delete channel according to channel id and also delete channel's messages
+ * @param para
+ */
 const deleteChannel = async (channelId) => {
-    const anime = await (0, MongoDBService_1.dbServiceGetWithoutPage)(tableName_1.DBTableName.CHANNEL, {
+    const channels = await (0, MongoDBService_1.dbServiceGetWithoutPage)(tableName_1.DBTableName.CHANNEL, {
         _id: channelId,
     }, {});
-    if (anime) {
-        return (0, MongoDBService_1.dbServiceDelete)(tableName_1.DBTableName.CHANNEL, anime[0]);
+    if (channels) {
+        //delete all messages related to deleted channel
+        await (0, MongoDBService_1.dbServiceDeleteMany)(tableName_1.DBTableName.MESSAGE, { channelId: channelId });
+        return (0, MongoDBService_1.dbServiceDelete)(tableName_1.DBTableName.CHANNEL, channels[0]);
     }
     else {
         return null;

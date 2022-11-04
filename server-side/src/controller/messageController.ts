@@ -20,11 +20,19 @@ import {
 } from "../type/messageType";
 import { DBTableName } from "../type/tableName";
 
+/**
+ * insert message to database
+ * @param channelBody
+ */
 export const insertMessage = async (
   messageBody: Message
 ): Promise<InsertOneWriteOpResult<allTypes>> =>
   dbServiceInsert<Message>(DBTableName.MESSAGE, messageBody);
 
+/**
+ * get messages according to sortType, sortAscend, channelId, page, pageSize
+ * @param para
+ */
 export const getMessageByPage = async (
   para: MessageGetByPagePara
 ): Promise<{
@@ -52,6 +60,10 @@ export const getMessageByPage = async (
   }
 };
 
+/**
+ * filter messages according to title, timeStart, timeEnd, sortType, sortAscend
+ * @param para
+ */
 export const getMessageBySearch = async (
   para: MessageGetBySearchPara
 ): Promise<Message[] | null> => {
@@ -75,6 +87,10 @@ export const getMessageBySearch = async (
   }
 };
 
+/**
+ * update message
+ * @param para
+ */
 export const updateMessage = async (
   messageBody: Message
 ): Promise<UpdateWriteOpResult> => {
@@ -92,6 +108,10 @@ export const updateMessage = async (
   );
 };
 
+/**
+ * delete message according to message id
+ * @param para
+ */
 export const deleteMessage = async (
   messageId: string
 ): Promise<DeleteWriteOpResultObject | null> => {
@@ -102,7 +122,7 @@ export const deleteMessage = async (
     },
     {}
   );
-
+  console.log(messages);
   if (messages) {
     return dbServiceDelete<Message>(DBTableName.MESSAGE, messages[0]);
   } else {

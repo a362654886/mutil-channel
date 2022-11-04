@@ -6,7 +6,7 @@ import {
 import {
   dbServiceCount,
   dbServiceDelete,
-  dbServiceGetByPage,
+  dbServiceDeleteMany,
   dbServiceGetWithoutPage,
   dbServiceInsert,
   dbServiceLookup,
@@ -20,14 +20,22 @@ import {
 } from "../type/channelType";
 import { getChannelSortType } from "../tools/sortFn";
 import { DBTableName } from "../type/tableName";
-import { PAGE_SIZE } from "../const";
 import { getChannelWithMessageLookUpBody } from "../tools/lookup/getChannelWithMessageLookuo";
+import { PAGE_SIZE } from "../common/const";
 
+/**
+ * insert Channel to database
+ * @param channelBody
+ */
 export const insertChannel = async (
   channelBody: Channel
 ): Promise<InsertOneWriteOpResult<allTypes>> =>
   dbServiceInsert<Channel>(DBTableName.CHANNEL, channelBody);
 
+/**
+ * get channels according to sortType, sortAscend, page, pageSize
+ * @param para
+ */
 export const getChanelByPage = async (
   para: ChannelGetByPagePara
 ): Promise<{
@@ -53,6 +61,10 @@ export const getChanelByPage = async (
   }
 };
 
+/**
+ * filter channels according to name, sortType, sortAscend
+ * @param para
+ */
 export const getChanelBySearch = async (
   para: ChannelGetBySearchPara
 ): Promise<Channel[] | null> => {
@@ -69,6 +81,10 @@ export const getChanelBySearch = async (
   }
 };
 
+/**
+ * update channel
+ * @param para
+ */
 export const updateChannel = async (
   channel: Channel
 ): Promise<UpdateWriteOpResult> => {
@@ -85,10 +101,14 @@ export const updateChannel = async (
   );
 };
 
+/**
+ * delete channel according to channel id and also delete channel's messages 
+ * @param para
+ */
 export const deleteChannel = async (
   channelId: string
 ): Promise<DeleteWriteOpResultObject | null> => {
-  const anime: Channel[] = await dbServiceGetWithoutPage<Channel>(
+  const channels: Channel[] = await dbServiceGetWithoutPage<Channel>(
     DBTableName.CHANNEL,
     {
       _id: channelId,
@@ -96,8 +116,11 @@ export const deleteChannel = async (
     {}
   );
 
-  if (anime) {
-    return dbServiceDelete<Channel>(DBTableName.CHANNEL, anime[0]);
+  if (channels) {
+    //delete all messages related to deleted channel
+    await dbServiceDeleteMany(DBTableName.MESSAGE, { channelId: channelId });
+
+    return dbServiceDelete<Channel>(DBTableName.CHANNEL, channels[0]);
   } else {
     return null;
   }

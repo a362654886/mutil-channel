@@ -1,6 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getResult = exports.generateReturnBody = void 0;
+/**
+ * format API return body
+ * @param status
+ * @param body
+ */
 const generateReturnBody = (status, body) => {
     return {
         statusCode: status,
@@ -11,6 +16,12 @@ const generateReturnBody = (status, body) => {
     };
 };
 exports.generateReturnBody = generateReturnBody;
+/**
+ * auto generate return body according different function para
+ * @param body
+ * @param asyncFn
+ * @param successInfo
+ */
 const getResult = async (body, asyncFn, successInfo) => {
     try {
         const aBody = body;

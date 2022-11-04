@@ -19,6 +19,9 @@ import {
   MessageGetBySearchPara,
 } from "../type/messageType";
 
+/**
+ * insert message handler
+ */
 const messageInsert: Handler = async (event, context) => {
   const { messageBody } = JSON.parse(event.body) || {};
   return getResult<Message, InsertOneWriteOpResult<allTypes>>(
@@ -28,6 +31,9 @@ const messageInsert: Handler = async (event, context) => {
   );
 };
 
+/**
+ * get messages by page handler
+ */
 const messagesGetByPage: Handler = async (event, context) => {
   const { sortType, sortAscend, channelId, page, pageSize } =
     event.queryStringParameters;
@@ -46,6 +52,9 @@ const messagesGetByPage: Handler = async (event, context) => {
   );
 };
 
+/**
+ * get messages by search handler
+ */
 const messagesGetBySearch: Handler = async (event, context) => {
   const { title, timeStart, timeEnd, sortType, sortAscend } =
     event.queryStringParameters;
@@ -55,6 +64,9 @@ const messagesGetBySearch: Handler = async (event, context) => {
   );
 };
 
+/**
+ * update message handler
+ */
 const messageUpdate: Handler = async (event, context) => {
   const { messageBody } = JSON.parse(event.body) || {};
   return getResult<Message, UpdateWriteOpResult>(
@@ -64,8 +76,12 @@ const messageUpdate: Handler = async (event, context) => {
   );
 };
 
+/**
+ * delete message handler
+ */
 const messageDelete: Handler = async (event, context) => {
   const { messageId } = event.queryStringParameters;
+  console.log(messageId)
   return getResult<string, DeleteWriteOpResultObject | null>(
     messageId,
     deleteMessage,

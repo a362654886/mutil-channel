@@ -13,6 +13,11 @@ import { allTypes } from "../type/types";
 const dbConnectionUrl =
   "mongodb+srv://leilu0229:AAaa123581321@cluster0.vm8df.mongodb.net/?retryWrites=true&w=majority";
 
+/**
+ * connect to DB according the dbCollectionName and the return the collection body
+ * @param dbCollectionName
+ * @return dbCollection
+ */
 export const dbObject = async (
   dbCollectionName: string
 ): Promise<Collection> => {
@@ -22,7 +27,15 @@ export const dbObject = async (
   return dbCollection;
 };
 
-//query
+/**
+ * get data by page
+ * @param tableName
+ * @param searchKey
+ * @param page
+ * @param pageSize
+ * @param sort
+ * @return Generics Array
+ */
 const dbServiceGetByPage = async <T>(
   tableName: string,
   searchKey: Record<string, unknown>,
@@ -39,6 +52,13 @@ const dbServiceGetByPage = async <T>(
     .toArray();
 };
 
+/**
+ * filter data according search key
+ * @param tableName
+ * @param searchKey
+ * @param sort
+ * @return Generics Array
+ */
 const dbServiceGetWithoutPage = async <T>(
   tableName: string,
   searchKey: Record<string, unknown>,
@@ -47,6 +67,12 @@ const dbServiceGetWithoutPage = async <T>(
   const result = await dbObject(tableName);
   return result.find(searchKey).sort(sort).toArray();
 };
+
+/**
+ * insert data
+ * @param tableName
+ * @param body
+ */
 const dbServiceInsert = async <T>(
   tableName: string,
   body: T
@@ -55,6 +81,12 @@ const dbServiceInsert = async <T>(
   return result.insertOne(body);
 };
 
+/**
+ * update data
+ * @param tableName
+ * @param filter
+ * @param body
+ */
 const dbServiceUpdate = async <T>(
   tableName: string,
   filter: Record<string, unknown>,
@@ -67,6 +99,11 @@ const dbServiceUpdate = async <T>(
   ) as unknown as UpdateWriteOpResult;
 };
 
+/**
+ * delete one item
+ * @param tableName
+ * @param body
+ */
 const dbServiceDelete = async <T>(
   tableName: string,
   body: T
@@ -77,6 +114,11 @@ const dbServiceDelete = async <T>(
   ) as unknown as DeleteWriteOpResultObject;
 };
 
+/**
+ * delete many items
+ * @param tableName
+ * @param matchBody
+ */
 const dbServiceDeleteMany = async (
   tableName: string,
   matchBody: Record<string, unknown>
@@ -85,6 +127,11 @@ const dbServiceDeleteMany = async (
   return result.deleteMany(matchBody);
 };
 
+/**
+ * get table's count
+ * @param tableName
+ * @param searchKey
+ */
 const dbServiceCount = async (
   tableName: string,
   searchKey: Record<string, unknown>
@@ -93,6 +140,14 @@ const dbServiceCount = async (
   return result.count(searchKey);
 };
 
+/**
+ * mongoDB lookup function
+ * @param tableName
+ * @param lookupObj
+ * @param page
+ * @param pageSize
+ * @param sort
+ */
 const dbServiceLookup = async <T>(
   tableName: string,
   lookupObj: any[],

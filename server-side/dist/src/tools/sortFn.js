@@ -1,6 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getMessageSortType = exports.getChannelSortType = void 0;
+/**
+ * @param sortType
+ * @param ascend
+ */
 const getChannelSortType = (sortType, ascend) => {
     switch (sortType) {
         case "name":
@@ -10,6 +14,10 @@ const getChannelSortType = (sortType, ascend) => {
     }
 };
 exports.getChannelSortType = getChannelSortType;
+/**
+ * @param sortType
+ * @param ascend
+ */
 const getMessageSortType = (sortType, ascend) => {
     switch (sortType) {
         case "time":

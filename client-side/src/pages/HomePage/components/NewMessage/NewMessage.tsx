@@ -23,7 +23,9 @@ const NewMessage = ({
       createAt: new Date().valueOf(),
       title: title,
       context: context,
+      _id: `${channelId}${new Date().valueOf()}`,
     });
+    close();
   };
 
   return (

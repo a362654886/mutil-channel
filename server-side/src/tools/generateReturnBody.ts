@@ -4,6 +4,11 @@ export type returnBody = {
   body: JSON | string;
 };
 
+/**
+ * format API return body
+ * @param status
+ * @param body
+ */
 export const generateReturnBody = (
   status: number,
   body: JSON | string
@@ -17,6 +22,12 @@ export const generateReturnBody = (
   };
 };
 
+/**
+ * auto generate return body according different function para
+ * @param body
+ * @param asyncFn
+ * @param successInfo
+ */
 export const getResult = async <T, N>(
   body: T,
   asyncFn: (value: T) => Promise<N>,

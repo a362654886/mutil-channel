@@ -4,8 +4,16 @@ exports.deleteMessage = exports.updateMessage = exports.getMessageBySearch = exp
 const MongoDBService_1 = require("../service/MongoDBService");
 const sortFn_1 = require("../tools/sortFn");
 const tableName_1 = require("../type/tableName");
+/**
+ * insert message to database
+ * @param channelBody
+ */
 const insertMessage = async (messageBody) => (0, MongoDBService_1.dbServiceInsert)(tableName_1.DBTableName.MESSAGE, messageBody);
 exports.insertMessage = insertMessage;
+/**
+ * get messages according to sortType, sortAscend, channelId, page, pageSize
+ * @param para
+ */
 const getMessageByPage = async (para) => {
     try {
         const sortBody = (0, sortFn_1.getChannelSortType)(para.sortType, para.sortAscend);
@@ -23,6 +31,10 @@ const getMessageByPage = async (para) => {
     }
 };
 exports.getMessageByPage = getMessageByPage;
+/**
+ * filter messages according to title, timeStart, timeEnd, sortType, sortAscend
+ * @param para
+ */
 const getMessageBySearch = async (para) => {
     try {
         const sortBody = (0, sortFn_1.getChannelSortType)(para.sortType, para.sortAscend);
@@ -41,6 +53,10 @@ const getMessageBySearch = async (para) => {
     }
 };
 exports.getMessageBySearch = getMessageBySearch;
+/**
+ * update message
+ * @param para
+ */
 const updateMessage = async (messageBody) => {
     const filterObj = { _id: messageBody._id };
     const body = {
@@ -52,10 +68,15 @@ const updateMessage = async (messageBody) => {
     return (0, MongoDBService_1.dbServiceUpdate)(tableName_1.DBTableName.MESSAGE, filterObj, body);
 };
 exports.updateMessage = updateMessage;
+/**
+ * delete message according to message id
+ * @param para
+ */
 const deleteMessage = async (messageId) => {
     const messages = await (0, MongoDBService_1.dbServiceGetWithoutPage)(tableName_1.DBTableName.MESSAGE, {
         _id: messageId,
     }, {});
+    console.log(messages);
     if (messages) {
         return (0, MongoDBService_1.dbServiceDelete)(tableName_1.DBTableName.MESSAGE, messages[0]);
     }

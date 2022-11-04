@@ -19,6 +19,7 @@ const NewChannel = ({ addNewChannel, close }: IProps): JSX.Element => {
       _id: `${channelName}${new Date().valueOf()}`,
       name: channelName,
     });
+    close();
   };
 
   return (
@@ -33,6 +34,7 @@ const NewChannel = ({ addNewChannel, close }: IProps): JSX.Element => {
           <Button onClick={() => close()}>Cancel</Button>
         </div>
       }
+      onCancel={close}
     >
       <h3>Name:</h3>
       <Input

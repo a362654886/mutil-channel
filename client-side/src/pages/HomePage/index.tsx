@@ -48,6 +48,10 @@ const MainPage = (): JSX.Element => {
     );
   };
 
+  const deleteChannel = (deleteChannelId: string) => {
+    console.log(deleteChannelId);
+  };
+
   const filterByPage = (page: number) => {
     const newFilterPara = {
       sortType: channels.filterPara.sortType,
@@ -72,7 +76,19 @@ const MainPage = (): JSX.Element => {
         >
           {allChannels.channels.map((channel, index) => {
             return (
-              <Panel header={channel.name} key={`${channel._id}${index}`}>
+              <Panel
+                header={channel.name}
+                key={`${channel._id}${index}`}
+                extra={
+                  <Button
+                    onClick={() => {
+                      deleteChannel(channel._id as string);
+                    }}
+                  >
+                    delete
+                  </Button>
+                }
+              >
                 <Button
                   onClick={() => {
                     setNewMessageVisible(true);

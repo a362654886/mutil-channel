@@ -1,3 +1,7 @@
+/**
+ * @param sortType
+ * @param ascend
+ */
 export const getChannelSortType = (sortType: string, ascend: boolean): any => {
   switch (sortType) {
     case "name":
@@ -7,6 +11,10 @@ export const getChannelSortType = (sortType: string, ascend: boolean): any => {
   }
 };
 
+/**
+ * @param sortType
+ * @param ascend
+ */
 export const getMessageSortType = (sortType: string, ascend: boolean): any => {
   switch (sortType) {
     case "time":
